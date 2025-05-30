@@ -4,33 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planner Quintino Coders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
       background: #0e0e1c;
       color: #fff;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 72px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      color: #a855f7;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+      color: #ccc;
+    }
+
+    .cta-button {
+      background-color: #a855f7;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #9333ea;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: #a855f7;
+      text-align: center;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding-left: 0;
+      max-width: 640px;
+      margin: 0 auto 30px;
+    }
+
+    .benefits li {
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .benefits li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #a855f7;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      max-width: 280px;
+      border-radius: 10px;
+    }
+
+    .testimonial {
+      background-color: #4a2c6a;
       padding: 20px;
+      border-radius: 10px;
+      margin: 16px auto;
+      max-width: 640px;
+      font-style: italic;
     }
 
     .oferta-bloco {
       background-color: #1c1c2e;
-      padding: 30px 20px;
+      padding: 36px 24px;
       margin: auto;
       text-align: center;
-      max-width: 500px;
+      max-width: 520px;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .oferta-bloco h3 {
       font-size: 24px;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       color: #e5d4ff;
     }
 
@@ -45,19 +144,19 @@
       font-size: 32px;
       font-weight: bold;
       color: #a855f7;
-      margin: 5px 0;
+      margin: 6px 0;
     }
 
     .pagamento {
       font-size: 14px;
       color: #ccc;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .beneficios {
       list-style: none;
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
       text-align: left;
       display: inline-block;
       font-size: 16px;
@@ -84,158 +183,30 @@
       background-color: #9333ea;
     }
 
-    @media (max-width: 500px) {
-      .oferta-bloco {
-        padding: 20px 15px;
-        border-radius: 12px;
-      }
-
-      .preco-novo {
-        font-size: 28px;
-      }
-
-      .beneficios {
-        font-size: 14px;
-      }
-
-      .botao-comprar {
-        width: 100%;
-        font-size: 15px;
-      }
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      color: #a855f7;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-
-    .cta-button {
-      background-color: #a855f7;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .cta-button:hover {
-      background-color: #9333ea;
-    }
-
-    .section {
-      margin-top: 60px;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #a855f7;
-      text-align: center;
-    }
-
-    .section p {
-      font-size: 1.1rem;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .benefits ul {
-      list-style: none;
-      padding-left: 0;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .benefits li {
-      margin-bottom: 15px;
-      position: relative;
-      padding-left: 24px;
-    }
-
-    .benefits li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #a855f7;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    .gallery img {
-      max-width: 280px;
-      border-radius: 10px;
-    }
-
-    .testimonial {
-      background-color: #4a2c6a;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 10px auto;
-      max-width: 600px;
-      text-align: left;
-    }
-
-    .testimonial p {
-      font-style: italic;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .hero h1 {
         font-size: 2rem;
       }
 
-      .hero p, .section p {
+      .hero p,
+      .section p {
         font-size: 1rem;
-      }
-
-      .cta-button {
-        width: 100%;
       }
 
       .gallery img {
         max-width: 100%;
       }
-    }
 
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 3.6rem;
-        line-height: 1.2;
-      }
-
-      .gallery img {
-        max-width: 360px;
+      .botao-comprar,
+      .cta-button {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+
     <section class="hero">
       <h1>O Planner que Vai Ajudar Você a Conquistar Seu Primeiro Emprego</h1>
       <p>Se sua rotina está desorganizada, suas metas estão soltas e você não sabe por onde começar, esse planner é o seu guia. Organize, aprenda, evolua.</p>
@@ -278,24 +249,25 @@
       </div>
     </section>
 
-    <div class="oferta-bloco">
-      <h3>Planner Quintino Coders</h3>
-      <p class="preco-antigo">R$ 197</p>
-      <p class="preco-novo">R$ 39</p>
-      <p class="pagamento">Pagamento único</p>
-      <ul class="beneficios">
-        <li>✔ +100 ideias de projetos reais</li>
-        <li>✔ Roadmaps por linguagem</li>
-        <li>✔ Currículo perfeito para devs iniciantes</li>
-        <li>✔ Sites de vagas confiáveis</li>
-        <li>✔ Checklist de portfólio</li>
-        <li>✔ Acesso vitalício</li>
-        <li>✔ Garantia de 7 dias</li>
-      </ul>
-      <a href="https://pay.kiwify.com.br/r5H2nqm" class="botao-comprar" target="_blank">GARANTA O SEU AGORA</a>
-    </div>
+    <section class="section">
+      <div class="oferta-bloco">
+        <h3>Planner Quintino Coders</h3>
+        <p class="preco-antigo">R$ 197</p>
+        <p class="preco-novo">R$ 39</p>
+        <p class="pagamento">Pagamento único</p>
+        <ul class="beneficios">
+          <li>✔ +100 ideias de projetos reais</li>
+          <li>✔ Roadmaps por linguagem</li>
+          <li>✔ Currículo perfeito para devs iniciantes</li>
+          <li>✔ Sites de vagas confiáveis</li>
+          <li>✔ Checklist de portfólio</li>
+          <li>✔ Acesso vitalício</li>
+          <li>✔ Garantia de 7 dias</li>
+        </ul>
+        <a href="https://pay.kiwify.com.br/r5H2nqm" class="botao-comprar" target="_blank">GARANTA O SEU AGORA</a>
+      </div>
+    </section>
 
-   
   </div>
 </body>
 </html>
